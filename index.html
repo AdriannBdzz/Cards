@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards de Producto</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+   
+    <dialog id="cookieDialog">
+        <p>Este sitio utiliza cookies para mejorar su experiencia. Al continuar navegando, aceptas el uso de cookies.</p>
+        <button id="acceptCookies">Aceptar</button>
+    </dialog>
+
+    <div class="card-container" id="cardContainer">
+        <template id="productCardTemplate">
+            <div class="card">
+                <img src="" alt="Imagen del producto" class="product-image" />
+                <h2 class="product-title"><slot name="title"></slot></h2>
+                <p class="product-description"><slot name="description"></slot></p>
+                <p class="product-price"><slot name="price"></slot></p>
+                <button class="like-button">❤️ Favorito</button>
+                <button class="cart-button">🛒 Añadir al carrito</button>
+            </div>
+        </template>
+    </div>
+
+    
+    <div class="action-buttons">
+        <button id="viewCartButton">Ver Carrito</button>
+        <button id="viewFavoritesButton">Ver Favoritos</button>
+        <button id="checkoutButton">Proceder a la Compra</button>
+    </div>
+
+    
+    <div id="modal" class="modal" style="display: none;">
+        <div id="cartContent" style="display: none;"></div>
+        <div id="favoritesContent" style="display: none;"></div>
+        <div id="checkoutContent" style="display: none;"></div>
+        <button id="closeModal">Cerrar</button>
+    </div>
+
+</body>
+</html>
